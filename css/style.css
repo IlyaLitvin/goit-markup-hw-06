@@ -50,34 +50,36 @@ img {
   background-color: var(--box-bg-color);
   margin-bottom: 30px;
 }
+
 /* =============modal window=========== */
+
 .backdrop {
   position: fixed;
-  top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.2);
-  opacity: 1;
-  transition: all 0.25s linear 0.25s;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: all 0.1s ease;
 }
 
 .modal {
-  display: flex;
-  justify-content: flex-end;
-  position: relative;
+  padding: 40px;
+  border-radius: 4px;
+  position: absolute;
+  top: 50%;
   left: 50%;
-  top: 221px;
-  transform: translateX(-50%) scale(1);
-  width: 528px;
-  height: 581px;
-  background: #ffffff;
+  transform: translate(-50%, -50%) scale(1);
+  transition: 51s;
+  min-width: 528px;
+  background-color: var(--primary-white-color);
+  transition: transform 0.3s linear;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
-  border-radius: 4px;
-  transform: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  opacity: 1;
-  transition: all 0.25s linear;
+}
+
+.backdrop.is-hidden .modal {
+  transform: scale(0);
 }
 
 .modal-btn {
@@ -334,10 +336,10 @@ img {
 }
 
 .is-hidden {
+  transition: all 0.2s ease;
   opacity: 0;
   pointer-events: none;
   visibility: hidden;
-  transform: translateY(-50%) scale(0);
 }
 
 /* =============section================ */
