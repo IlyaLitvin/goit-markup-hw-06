@@ -173,11 +173,13 @@ img {
   width: 16px;
   height: 16px;
   margin-right: 6px;
-  background-image: url(../img/Vector.svg);
+  background-image: url(../img/Vector.svg), url(../img/iconcheck.svg);
+  background-size: contain, 0;
 }
 
 .modal-form-check:checked + .modal-form-label-check::before {
   background-image: url(../img/iconcheck.svg);
+  background-size: 1, contain;
 }
 
 .modal-form-icon {
@@ -190,11 +192,13 @@ img {
   height: 18px;
 }
 
-.modal-form-message:focus {
+.modal-form-message:focus,
+.modal-form-message:hover {
   border-color: var(--accent-color);
 }
 
-.modal-form-input:focus {
+.modal-form-input:focus,
+.modal-form-input:hover {
   border-color: var(--accent-color);
 }
 
